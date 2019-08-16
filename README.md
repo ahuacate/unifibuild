@@ -46,7 +46,7 @@ First step is to edit your default LAN network configuration. Go to your UniFi c
 | Domain Name | localdomain
 | IGMP Snooping | `☑` Enable IGMP Snooping
 | DHCP Mode | `☑` DHCP Server
-| DHCP Range | 192.168.1.150-192.168.1.250
+| DHCP Range | `192.168.1.150`-`192.168.1.250`
 | DHCP Name Server | `☑`Manual `192.168.1.254` + `1.0.0.1`
 | DHCP Lease Time | `86400`
 | DHCP Gateway IP | `☑` Auto
