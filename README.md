@@ -34,7 +34,7 @@ To be completed.
 I have used VLANs to separate my network for easier management and to apply security policies.
 
 ### 2.1 Edit Default LAN network
-First step is to edit your default LAN network configuration. Go to your UniFi controller `Settings` > `Networks` > `Actions - EDIT` and set the values as follows, remembering to click `Save` at each completed section:
+First step is to edit your default LAN network configuration. Go to your UniFi controller `Settings` > `Networks` > `Actions - EDIT` and set the values as follows, remembering to click `Save` when done:
 
 | Edit Network - LAN | Value | Notes
 | :--- | :--- | :---
@@ -42,6 +42,43 @@ First step is to edit your default LAN network configuration. Go to your UniFi c
 | Purpose | `Corporate`
 | Network Group | `LAN`
 | Port | LAN1
+| Gateway/Subnet | `192.168.1.5/24` | *Remember to click `UPDATE DHCP RANGE`*
+| Domain Name | localdomain
+| IGMP Snooping | `☑` Enable IGMP Snooping
+| DHCP Mode | `☑` DHCP Server
+| DHCP Range | `192.168.1.150`-`192.168.1.250`
+| DHCP Name Server | `☑`Manual `192.168.1.254` + `1.0.0.1`
+| DHCP Lease Time | `86400`
+| DHCP Gateway IP | `☑` Auto
+| DHCP UniFi Controller | Leave Default
+| **DHCP Guarding** | `☐` Enable DHCP Guarding
+| Trusted DCP server 1 | Leave Blank
+| UPnP LAN | `☐` Enable UPnP LAN
+| **Advanced DHCP Options**
+| DHCP NTP Server | `☐` Enable DHCP NTP server
+| NTP server 1 | 192.168.1.5
+| NTP server 2 | Leave blank
+| DHCP Network Boot | `☐` Enable network boot | *Only if you are running TFPBoot clients*
+| DHCP Network Boot - IP | Leave blank | *i.e 192.168.1.10*
+| DHCP Network Boot - Filename | Leave blank | *i.e /pxelinux.0*
+| DHCP Time Offset | `☐` Enable DHCP time offset
+| DHCP WPAD URL | Leave blank
+| DHCP TFTP Server | Leave blank
+| DHCP WINS Server | `☐` Enable DHCP WINS Server
+| **Configure IPv6 Network**
+| IPv6 Interface Type | `☐` None
+
+And click `Save`.
+
+### 2.2 Create UniFi VLAN Networks
+
+| Create New Network | VLAN2 | VLAN20 | VLAN30 | VLAN40 | VLAN50 | VLAN60 | VLAN70 | VLAN80 | VLAN100 | VLAN110 | VLAN120
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
+| Name | `VPN-egress` | `LAN-smart` | `LAN-vpngate-world` | `LAN-vpngate-local` | `LAN-media` | `LAN-vpnserver` | `LAN-guest` | `LAN-homelab` | `LAN-hass` | `LAN-iot` | `LAN-security` 
+| Purpose | `Corporate`
+| Network Group | `LAN`
+| Port | LAN1
+| VLAN | 20
 | Gateway/Subnet | `192.168.1.5/24` | *Remember to click `UPDATE DHCP RANGE`*
 | Domain Name | localdomain
 | IGMP Snooping | `☑` Enable IGMP Snooping
