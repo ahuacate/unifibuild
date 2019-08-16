@@ -60,7 +60,7 @@ First step is to edit your default LAN network configuration. Go to your UniFi c
 | NTP server 2 | Leave blank
 | DHCP Network Boot | `☐` Enable network boot | *Only if you are running TFPBoot clients*
 | DHCP Network Boot - IP | Leave blank | *i.e 192.168.1.10*
-| DHCP Network Boot - Filename | *i.e /pxelinux.0*
+| DHCP Network Boot - Filename | Leave blank | *i.e /pxelinux.0*
 | DHCP Time Offset | `☐` Enable DHCP time offset
 | DHCP WPAD URL | Leave blank
 | DHCP TFTP Server | Leave blank
