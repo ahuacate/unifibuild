@@ -75,16 +75,16 @@ And click `Save`.
 | Create New Network | VLAN2 | VLAN20 | VLAN30 | VLAN40 | VLAN50 | VLAN60 | VLAN70 | VLAN80 | VLAN100 | VLAN110 | VLAN120
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
 | Name | `VPN-egress` | `LAN-smart` | `LAN-vpngate-world` | `LAN-vpngate-local` | `LAN-media` | `LAN-vpnserver` | `LAN-guest` | `LAN-homelab` | `LAN-hass` | `LAN-iot` | `LAN-security` 
-| Purpose | `Corporate`
-| Network Group | `LAN`
-| Port | LAN1
-| VLAN | 20
-| Gateway/Subnet | `192.168.1.5/24` | *Remember to click `UPDATE DHCP RANGE`*
-| Domain Name | localdomain
+| Purpose | `Guest` | `Corporate`
+| Network Group | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` |
+| Port | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1
+| VLAN | 2
+| Gateway/Subnet | `192.168.2.5/28` | 
+| Domain Name | Leave blank
 | IGMP Snooping | `☑` Enable IGMP Snooping
 | DHCP Mode | `☑` DHCP Server
-| DHCP Range | `192.168.1.150`-`192.168.1.250`
-| DHCP Name Server | `☑`Manual `192.168.1.254` + `1.0.0.1`
+| DHCP Range | `192.168.2.1`-`192.168.2.14`
+| DHCP Name Server | `☑` Auto
 | DHCP Lease Time | `86400`
 | DHCP Gateway IP | `☑` Auto
 | DHCP UniFi Controller | Leave Default
@@ -95,9 +95,9 @@ And click `Save`.
 | DHCP NTP Server | `☐` Enable DHCP NTP server
 | NTP server 1 | 192.168.1.5
 | NTP server 2 | Leave blank
-| DHCP Network Boot | `☐` Enable network boot | *Only if you are running TFPBoot clients*
-| DHCP Network Boot - IP | Leave blank | *i.e 192.168.1.10*
-| DHCP Network Boot - Filename | Leave blank | *i.e /pxelinux.0*
+| DHCP Network Boot | `☐` Enable network boot |
+| DHCP Network Boot - IP | Leave blank |
+| DHCP Network Boot - Filename | Leave blank |
 | DHCP Time Offset | `☐` Enable DHCP time offset
 | DHCP WPAD URL | Leave blank
 | DHCP TFTP Server | Leave blank
