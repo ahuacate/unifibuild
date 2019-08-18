@@ -75,7 +75,7 @@ And click `Save`.
 | Create New Network | VLAN2 | VLAN20 | VLAN30 | VLAN40 | VLAN50 | VLAN60 | VLAN70 | VLAN80 | VLAN90 | VLAN100 | VLAN110 | VLAN120
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
 | Name | `VPN-egress` | `LAN-smart` | `LAN-vpngate-world` | `LAN-vpngate-local` | `LAN-media` | `LAN-vpnserver` | `LAN-guest` | `LAN-homelab` | `LAN-privatelab` | `LAN-hass` | `LAN-iot` | `LAN-security` 
-| Purpose |`Guest` |`Corporate`|`VLAN Only`|`VLAN Only`|`Corporate`|`Corporate`|`Guest`|`Corporate`|`Corporate`|`Corporate`|`Corporate`|`Corporate
+| Purpose |`Guest` |`Corporate`|`VLAN Only`|`VLAN Only`|`Corporate`|`Corporate`|`Guest`|`Corporate`|`Corporate`|`Corporate`|`Corporate`|`Corporate`
 | Network Group |`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|
 | Port |LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1
 | VLAN | 2 |20|30|40|50|60|70|80|90|100|100|110|120
