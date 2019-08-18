@@ -72,35 +72,35 @@ And click `Save`.
 
 ### 2.2 Create UniFi VLAN Networks
 
-| Create New Network | VLAN2 | VLAN20 | VLAN30 | VLAN40 | VLAN50 | VLAN60 | VLAN70 | VLAN80 | VLAN100 | VLAN110 | VLAN120
+| Create New Network | VLAN2 | VLAN20 | VLAN30 | VLAN40 | VLAN50 | VLAN60 | VLAN70 | VLAN80 | VLAN90 | VLAN100 | VLAN110 | VLAN120
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
-| Name | `VPN-egress` | `LAN-smart` | `LAN-vpngate-world` | `LAN-vpngate-local` | `LAN-media` | `LAN-vpnserver` | `LAN-guest` | `LAN-homelab` | `LAN-hass` | `LAN-iot` | `LAN-security` 
-| Purpose | `Guest` | `Corporate`
-| Network Group | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` | `LAN` |
-| Port | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1 | LAN1
-| VLAN | 2
-| Gateway/Subnet | `192.168.2.5/28` | 
+| Name | `VPN-egress` | `LAN-smart` | `LAN-vpngate-world` | `LAN-vpngate-local` | `LAN-media` | `LAN-vpnserver` | `LAN-guest` | `LAN-homelab` | `LAN-privatelab` | `LAN-hass` | `LAN-iot` | `LAN-security` 
+| Purpose |`Guest` |`Corporate`|`VLAN Only`|`VLAN Only`|`Corporate`|`Corporate`|
+| Network Group |`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|
+| Port |LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1
+| VLAN | 2 |20|30|40|50|60|70|80|90|100|100|110|120
+| Gateway/Subnet |`192.168.2.5/28`| 
 | Domain Name | Leave blank
-| IGMP Snooping | `☑` Enable IGMP Snooping
-| DHCP Mode | `☑` DHCP Server
-| DHCP Range | `192.168.2.1`-`192.168.2.14`
-| DHCP Name Server | `☑` Auto
-| DHCP Lease Time | `86400`
-| DHCP Gateway IP | `☑` Auto
-| DHCP UniFi Controller | Leave Default
-| **DHCP Guarding** | `☐` Enable DHCP Guarding
-| Trusted DCP server 1 | Leave Blank
-| UPnP LAN | `☐` Enable UPnP LAN
+| IGMP Snooping |`☑` Enable IGMP Snooping
+| DHCP Mode |`☑` DHCP Server
+| DHCP Range |`192.168.2.1`-`192.168.2.14`
+| DHCP Name Server |`☑` Auto
+| DHCP Lease Time |`86400`
+| DHCP Gateway IP |`☑` Auto
+| DHCP UniFi Controller |Leave Default
+| **DHCP Guarding** |`☐` Enable DHCP Guarding
+| Trusted DCP server 1 |Leave Blank
+| UPnP LAN |`☐` Enable UPnP LAN
 | **Advanced DHCP Options**
-| DHCP NTP Server | `☐` Enable DHCP NTP server
-| NTP server 1 | 192.168.1.5
-| NTP server 2 | Leave blank
-| DHCP Network Boot | `☐` Enable network boot |
-| DHCP Network Boot - IP | Leave blank |
-| DHCP Network Boot - Filename | Leave blank |
-| DHCP Time Offset | `☐` Enable DHCP time offset
-| DHCP WPAD URL | Leave blank
-| DHCP TFTP Server | Leave blank
-| DHCP WINS Server | `☐` Enable DHCP WINS Server
+| DHCP NTP Server |`☐` Enable DHCP NTP server
+| NTP server 1 |192.168.1.5
+| NTP server 2 |Leave blank
+| DHCP Network Boot |`☐` Enable network boot |
+| DHCP Network Boot - IP |Leave blank |
+| DHCP Network Boot - Filename |Leave blank |
+| DHCP Time Offset |`☐` Enable DHCP time offset
+| DHCP WPAD URL |Leave blank
+| DHCP TFTP Server |Leave blank
+| DHCP WINS Server |`☐` Enable DHCP WINS Server
 | **Configure IPv6 Network**
-| IPv6 Interface Type | `☐` None
+| IPv6 Interface Type |`☐` None
