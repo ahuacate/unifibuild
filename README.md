@@ -73,7 +73,7 @@ And click `Save`.
 ### 2.2 Create UniFi VLAN Networks
 
 | Create New Network | VLAN2 | VLAN20 | VLAN30 | VLAN40 | VLAN50 | VLAN60 | VLAN70 | VLAN80 | VLAN90 | VLAN100 | VLAN110 | VLAN120
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
 | Name | `VPN-egress` | `LAN-smart` | `LAN-vpngate-world` | `LAN-vpngate-local` | `LAN-media` | `LAN-vpnserver` | `LAN-guest` | `LAN-homelab` | `LAN-privatelab` | `LAN-hass` | `LAN-iot` | `LAN-security` 
 | Purpose |`Guest` |`Corporate`|`VLAN Only`|`VLAN Only`|`Corporate`|`Corporate`|
 | Network Group |`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|
