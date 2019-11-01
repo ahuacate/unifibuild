@@ -1,5 +1,7 @@
 # UniFi Build
-This recipe is my UniFi network configuration. These instructions are focused on setting up your `Networks`, `Wireless Networks` and `Routing & Firewall` so they work. Basic or general UniFi Controller WebGUI configuration is not covered.
+This recipe is my UniFi network configuration. These instructions are focused on setting up your `Networks`, `Wireless Networks` and `Routing & Firewall` so they work.
+
+You will need a UniFi Controller WebGUI to perform the tasks.
 
 The hardware in this recipe uses:
 >  *  1x Ubiquiti UniFi Security Gateway 3P (USG)
@@ -9,7 +11,7 @@ The hardware in this recipe uses:
 >  *  1x Synology DS1515+ with 4x NICs; and,
 >  *  Various hardware for a Proxmox cluster (Qotom Mini PC Q500G6-S05).
 
-Obviously you can modify these instructions to meet your own hardware requirements.
+Modify these instructions to meet your own hardware requirements.
 
 Network prerequisites are:
 - [x] Layer 2 Network Switches
