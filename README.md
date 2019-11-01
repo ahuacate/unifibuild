@@ -76,7 +76,7 @@ Go to your UniFi controller `Settings` > `Wireless Networks` > `+Create New Wire
 | Name/SSID | `name-open` | *Choose your own SSID such as `banana-open`*
 | Enabled | `☑` Enable this wireless network
 | Security |`☐` Open `☐` WEP `☑` WPA Personal `☐` WPA Enterprise | *Always use WPA Personal - nothing less*
-| Security Key | Type in your passphrase | *Between 8 and 63 ASCII-encoded characters*
+| Security Key | Common passphrase | *Between 8 and 63 ASCII-encoded characters*
 | Guest Policy | `☐` Apply guest policies (captive portal, guest authentication, access)
 | **Advanced Options**
 | Multicast and Broadcast Filtering | `☐` Block LAN to WLAN Multicast and Broadcast Data
@@ -105,7 +105,17 @@ Go to your UniFi controller `Settings` > `Wireless Networks` > `+Create New Wire
 | Empty Password | `☐` Allow empty password
 
 And click `Save`
+Now repeat the procedure, using the above values except where shown (i.e Guest passphrase, Name/SSID), creating new wireless networks for the following VLAN's:
 
+| Create New Wireless Network | VLAN10 | VLAN20 | VLAN30 | VLAN40 | VLAN70 | VLAN120 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Name/SSID | `name-open` | `name-smart` | `name-vpngate-world` | `name-vpngate-local` | `name-guest` | `name-iot` |
+| Security Key | Common Passphrase | Common Passphrase |  Common Passphrase |  Common Passphrase |  **Guest Passphrase** |  Common Passphrase | 
+| Guest Policy | `☐` | `☐` | `☐` | `☐` | `☑` | `☐` |
+
+Your finished configuration must resemble the image below:
+
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_wireless.png)
 
 
 ## 2.0 UniFi Networks
