@@ -65,7 +65,48 @@ And click `Apply Changes`.
 
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_site.png)
 
-## 3.00 UniFi Settings - Wireless Networks 
+## 3.00 UniFi Settings - Wireless Networks
+Here we create wireless networks in VLAN increments of 10 (i.e VLAN10, VLAN20) which correspond to our `Network` settings.
+
+Go to your UniFi controller `Settings` > `Wireless Networks` > `+Create New Wireless Network` and set the values as follows, remembering to click `Apply Changes` when done:
+
+| Wireless Networks| Value | Notes
+| :--- | :--- | :---
+| **Create New Wireless Network**
+| Name/SSID | `name-open` | *Choose your own SSID such as `banana-open`*
+| Enabled | `☑` Enable this wireless network
+| Security |`☐` Open `☐` WEP `☑` WPA Personal `☐` WPA Enterprise | *Always use WPA Personal - nothing less*
+| Security Key | Type in your passphrase | *Between 8 and 63 ASCII-encoded characters*
+| Guest Policy | `☐` Apply guest policies (captive portal, guest authentication, access)
+| **Advanced Options**
+| Multicast and Broadcast Filtering | `☐` Block LAN to WLAN Multicast and Broadcast Data
+| VLAN | `☑` Use VLAN `10` (2-4009)
+| Fast Roaming (Beta) | `☑` Enable fast roaming
+| Hide SSID | `☐` Prevent this SSID from being broadcast
+| WPA Mode | `WPA2 Only` Encryption `AES/CCMP Only`
+| Group Rekey Interval | `☑` Enable GTK rekeying every `3600` seconds
+| User Group | Default
+| UAPSD | `☐` Enable Unscheduled Automatic Power Save Delivery
+| Scheduled | `☐` Enable WLAN schedule
+| Multicast Enhancement | `☐` Enable multicast enhancement (IGMPv3)
+| High Performance Devices | `☐` Connects high performance clients to 5 GHz only
+| **802.11 Rate and Beacon Controls**
+| DTIM Mode | `☑` Use default values
+| DTIM 2G Period | Leave Default
+| DTIM 5G Period | Leave Default
+| 2G Data Rate Control | `☐` Enable minimum data rate control
+| 5G Data Rate Control | `☐` Enable minimum data rate control
+| **MAC Filter**
+| Enabled | `☐` Enable filtering MAC addresses
+| **RADIUS Mac Authentication**
+| Enabled | `☐` Enable RADIUS MAC authentication
+| RADIUS Profile | Leave Default
+| MAC Address Format | Leave Default
+| Empty Password | `☐` Allow empty password
+
+And click `Save`
+
+
 
 ## 2.0 UniFi Networks
 I have used VLANs to separate my network for easier management and to apply security policies.
