@@ -38,21 +38,21 @@ Here we set you basic UniFi site (i.e home, location of site etc) preferences.  
 | Site | Value | Notes
 | :--- | :--- | :---
 | **Site Configuration**
-| Site Name | `LAN`
-| Country | `Corporate`
-| Timezone| `LAN`
+| Site Name | site1.foo.bar | *Use a identifier name like `berlin house` or `berlin.foo.bar`*
+| Country | Select your nation
+| Timezone| Select your Timezone
 | **Services**
 | Advanced Features | `☐` Enable advanced features
 | Automatic Upgrades | `☑`  Automatically upgrade AP firmware
-| LED | `☑`  Enable status LED
+| LED | `☑`  Enable status LED | *If disturbing LEDs, disable*
 | Alerts | `☐` Enable alert emails
 | Speed Test | `☐` Enable periodic speed test everyminutes
 | Uplink Connectivity Monitor | `☐` Enable connectivity monitor and wireless uplink
 | Remote Logging | `☐` Enable remote Syslog server
 | | `☐` Enable Netconsole logging server
 | **Provider Capabilities**
-| Download | `500` mbps | *Set according to your ISP WAN provider subscription*
-| Upload | `500` mbps | *Set according to your ISP WAN provider subscription*
+| Download | `500` mbps | *Set according to your ISP WAN provider DL subscription*
+| Upload | `500` mbps | *Set according to your ISP WAN provider UL subscription*
 | **Auto-Optimize Network**
 | Automatically Optimize Network and Wi-Fi performance | `Off`
 | **Device Authentication**
@@ -63,7 +63,9 @@ Here we set you basic UniFi site (i.e home, location of site etc) preferences.  
 
 And click `Apply Changes`.
 
-### 2.01 Site - 
+![alt text](https://raw.githubusercontent.com/ahuacate/ombi/master/images/Ombi_Configuration.png)
+
+## 3.00 UniFi Settings - Wireless Networks 
 
 ## 2.0 UniFi Networks
 I have used VLANs to separate my network for easier management and to apply security policies.
