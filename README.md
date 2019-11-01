@@ -29,8 +29,41 @@ Other Prerequisites are:
 Tasks to be performed are:
 - [ ] 1.0 Proxmox Base OS Installation
 
-## 1.0 UniFi Controller
+## 1.00 UniFi Controller
 To be completed.
+
+## 2.00 UniFi Settings - Site
+Here we set you basic UniFi site (i.e home, location of site etc) preferences.  Go to your UniFi controller `Settings` > `Site` and set the values as follows, remembering to click `Apply Changes` when done:
+
+| Site | Value | Notes
+| :--- | :--- | :---
+| **Site Configuration**
+| Site Name | `LAN`
+| Country | `Corporate`
+| Timezone| `LAN`
+| **Services**
+| Advanced Features | `☐` Enable advanced features
+| Automatic Upgrades | `☑`  Automatically upgrade AP firmware
+| LED | `☑`  Enable status LED
+| Alerts | `☐` Enable alert emails
+| Speed Test | `☐` Enable periodic speed test everyminutes
+| Uplink Connectivity Monitor | `☐` Enable connectivity monitor and wireless uplink
+| Remote Logging | `☐` Enable remote Syslog server
+| | `☐` Enable Netconsole logging server
+| **Provider Capabilities**
+| Download | `500` mbps | *Set according to your ISP WAN provider subscription*
+| Upload | `500` mbps | *Set according to your ISP WAN provider subscription*
+| **Auto-Optimize Network**
+| Automatically Optimize Network and Wi-Fi performance | `Off`
+| **Device Authentication**
+| SSH Authentication | `☑` Enable SSH authentication
+| | Username `admin`
+| | Password `Random character password ONLY i.e cA(8&KxjLHz8s4?A`
+| SSH Keys | No SSH keys have been defined.
+
+And click `Apply Changes`.
+
+### 2.01 Site - 
 
 ## 2.0 UniFi Networks
 I have used VLANs to separate my network for easier management and to apply security policies.
