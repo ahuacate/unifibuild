@@ -63,7 +63,7 @@ Here we set you basic UniFi site (i.e home, location of site etc) preferences.  
 
 And click `Apply Changes`.
 
-![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi-site.png)
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_site.png)
 
 ## 3.00 UniFi Settings - Wireless Networks 
 
