@@ -165,3 +165,39 @@ Create the following new networks. Go to your UniFi controller `Settings` > `Net
 
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_network_configuration.png)
 
+On completion of the above task your UniFi `Netowrks` WebGUI should resemble:
+
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_networks.png)
+
+## 3.00 UniFi Routing & Firewall
+Coming soon.
+
+## 4.00 UniFi IPS
+Coming soon.
+
+## 5.00 UniFi DPI
+Coming soon.
+
+## 6.00 UniFi Guest Control
+Coming soon.
+
+## 7.00 UniFi Profiles
+Coming soon.
+
+## 8.00 UniFi Services
+Go to your UniFi controller `Settings` > `Services` and set the values as follows, remembering to click `Save` at the end.
+
+### 8.01 UniFi Services - DHCP
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_dhcp.png)
+
+### 8.02 UniFi Services - MDNS
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_mdns.png)
+
+### 8.03 UniFi Services - UPNP
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_upnp.png)
+
+### 8.03 UniFi Services - NTP
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_ntp.png)
+
+### 8.03 UniFi Services - Scheduled Upgrades
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_upgrades.png)
