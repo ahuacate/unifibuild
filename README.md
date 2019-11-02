@@ -161,5 +161,7 @@ First step is to edit your default LAN network configuration. Go to your UniFi c
 And click `Save`.
 
 ### 2.2 Create UniFi Networks
+Create the following new networks. Go to your UniFi controller `Settings` > `Networks` > `Create New Network` and set the values as follows, remembering to click `Save` at the end of each new network:
 
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_network_configuration.png)
 
