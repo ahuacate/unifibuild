@@ -1,5 +1,5 @@
 # UniFi Build
-This recipe is my UniFi network configuration. These instructions are focused on setting up your `Networks`, `Wireless Networks` and `Routing & Firewall` so they work.
+The following is for creating a UniFi network. These instructions will setup your `LAN Networks`, `Wireless Networks` and `Routing & Firewall`.
 
 You will need a UniFi Controller WebGUI to perform the tasks.
 
