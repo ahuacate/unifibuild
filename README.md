@@ -160,37 +160,6 @@ First step is to edit your default LAN network configuration. Go to your UniFi c
 
 And click `Save`.
 
-### 2.2 Create UniFi VLAN Networks
+### 2.2 Create UniFi Networks
 
-| Create New Network | VLAN2 | VLAN10 | VLAN20 | VLAN30 | VLAN40 | VLAN50 | VLAN60 | VLAN70 | VLAN80 | VLAN90 | VLAN110 | VLAN120
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
-| Name | `VPN-egress` | `LAN-open` | `LAN-smart` | `LAN-vpngate-world` | `LAN-vpngate-local` | `LAN-media` | `LAN-vpnserver` | `LAN-guest` | `LAN-homelab` | `LAN-privatelab` | `LAN-iot` | `LAN-not` 
-| Purpose |`Guest` |`Corporate` | `Corporate` |`VLAN Only`|`VLAN Only`|`Corporate`|`Corporate`|`Guest`|`Corporate`|`Corporate`|`Corporate`|`Corporate`
-| Network Group |`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|
-| Port |LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1
-| VLAN |2|10|20|30|40|50|60|70|80|90|110|120
-| Gateway/Subnet |`192.168.2.5/28`|`192.168.10.5/24`|`192.168.20.5/24`|||`192.168.50.5/24`|`192.168.60.5/24`|`192.168.70.5/24`|`192.168.80.5/24`|`192.168.90.5/24`|`192.168.110.5/24`|`192.168.120.5/24`|
-| Domain Name |localdomain|localdomain|localdomain|||localdomain|localdomain|localdomain|localdomain|localdomain|localdomain|localdomain|
-| IGMP Snooping |`☑` Enable IGMP Snooping
-| DHCP Mode |`☑` DHCP Server
-| DHCP Range |`192.168.2.1`-`192.168.2.14`
-| DHCP Name Server |`☑` Auto
-| DHCP Lease Time |`86400`
-| DHCP Gateway IP |`☑` Auto
-| DHCP UniFi Controller |Leave Default
-| **DHCP Guarding** |`☐` Enable DHCP Guarding
-| Trusted DCP server 1 |Leave Blank
-| UPnP LAN |`☐` Enable UPnP LAN
-| **Advanced DHCP Options**
-| DHCP NTP Server |`☐` Enable DHCP NTP server
-| NTP server 1 |192.168.1.5
-| NTP server 2 |Leave blank
-| DHCP Network Boot |`☐` Enable network boot |
-| DHCP Network Boot - IP |Leave blank |
-| DHCP Network Boot - Filename |Leave blank |
-| DHCP Time Offset |`☐` Enable DHCP time offset
-| DHCP WPAD URL |Leave blank
-| DHCP TFTP Server |Leave blank
-| DHCP WINS Server |`☐` Enable DHCP WINS Server
-| **Configure IPv6 Network**
-| IPv6 Interface Type |`☐` None
+
