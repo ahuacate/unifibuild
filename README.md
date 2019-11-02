@@ -104,14 +104,16 @@ Go to your UniFi controller `Settings` > `Wireless Networks` > `+Create New Wire
 | MAC Address Format | Leave Default
 | Empty Password | `☐` Allow empty password
 
-And click `Save`
-Now repeat the procedure, using the above values except where shown (i.e Guest passphrase, Name/SSID), creating new wireless networks for the following VLAN's:
+And click `Save`.
+
+Now repeat the procedure, using the above values except where shown (i.e Guest passphrase, Name/SSID, Guest Policy), creating new wireless networks on the following VLAN's:
 
 | Create New Wireless Network | VLAN10 | VLAN20 | VLAN30 | VLAN40 | VLAN70 | VLAN120 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | Name/SSID | `name-open` | `name-smart` | `name-vpngate-world` | `name-vpngate-local` | `name-guest` | `name-iot` |
 | Security Key | Common Passphrase | Common Passphrase |  Common Passphrase |  Common Passphrase |  **Guest Passphrase** |  Common Passphrase | 
 | Guest Policy | `☐` | `☐` | `☐` | `☐` | `☑` | `☐` |
+| VLAN | `☑` Use VLAN `10` | `☑` Use VLAN `20` | `☑` Use VLAN `30` | `☑` Use VLAN `40` | `☑` Use VLAN `70` | `☑` Use VLAN `120` |
 
 Your finished configuration must resemble the image below:
 
@@ -119,7 +121,7 @@ Your finished configuration must resemble the image below:
 
 
 ## 2.0 UniFi Networks
-I have used VLANs to separate my network for easier management and to apply security policies.
+We use VLANs to separate networks for easier management and to apply security policies.
 
 ### 2.1 Edit Default LAN network
 First step is to edit your default LAN network configuration. Go to your UniFi controller `Settings` > `Networks` > `Actions - EDIT` and set the values as follows, remembering to click `Save` when done:
@@ -138,9 +140,9 @@ First step is to edit your default LAN network configuration. Go to your UniFi c
 | DHCP Name Server | `☑`Manual `192.168.1.254` + `1.0.0.1`
 | DHCP Lease Time | `86400`
 | DHCP Gateway IP | `☑` Auto
-| DHCP UniFi Controller | Leave Default
-| **DHCP Guarding** | `☐` Enable DHCP Guarding
-| Trusted DCP server 1 | Leave Blank
+| DHCP UniFi Controller | Leave Blank
+| DHCP Guarding | `☐` Enable DHCP Guarding
+| | `Trusted DCP server 1` | *Leave Blank*
 | UPnP LAN | `☐` Enable UPnP LAN
 | **Advanced DHCP Options**
 | DHCP NTP Server | `☐` Enable DHCP NTP server
@@ -160,13 +162,13 @@ And click `Save`.
 
 ### 2.2 Create UniFi VLAN Networks
 
-| Create New Network | VLAN2 | VLAN20 | VLAN30 | VLAN40 | VLAN50 | VLAN60 | VLAN70 | VLAN80 | VLAN90 | VLAN100 | VLAN110 | VLAN120
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
-| Name | `VPN-egress` | `LAN-smart` | `LAN-vpngate-world` | `LAN-vpngate-local` | `LAN-media` | `LAN-vpnserver` | `LAN-guest` | `LAN-homelab` | `LAN-privatelab` | `LAN-hass` | `LAN-iot` | `LAN-security` 
-| Purpose |`Guest` |`Corporate`|`VLAN Only`|`VLAN Only`|`Corporate`|`Corporate`|`Guest`|`Corporate`|`Corporate`|`Corporate`|`Corporate`|`Corporate`
+| Create New Network | VLAN2 | VLAN10 | VLAN20 | VLAN30 | VLAN40 | VLAN50 | VLAN60 | VLAN70 | VLAN80 | VLAN90 | VLAN110 | VLAN120
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---:
+| Name | `VPN-egress` | `LAN-open` | `LAN-smart` | `LAN-vpngate-world` | `LAN-vpngate-local` | `LAN-media` | `LAN-vpnserver` | `LAN-guest` | `LAN-homelab` | `LAN-privatelab` | `LAN-iot` | `LAN-not` 
+| Purpose |`Guest` |`Corporate` | `Corporate` |`VLAN Only`|`VLAN Only`|`Corporate`|`Corporate`|`Guest`|`Corporate`|`Corporate`|`Corporate`|`Corporate`
 | Network Group |`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|
 | Port |LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1
-| VLAN | 2 |20|30|40|50|60|70|80|90|100|100|110|120
+| VLAN |2|10|20|30|40|50|60|70|80|90|110|120
 | Gateway/Subnet |`192.168.2.5/28`| 
 | Domain Name | Leave blank
 | IGMP Snooping |`☑` Enable IGMP Snooping
