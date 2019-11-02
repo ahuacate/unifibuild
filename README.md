@@ -25,8 +25,7 @@ Other Prerequisites are:
 
 Tasks to be performed are:
 - [ ] 1.0 Proxmox Base OS Installation
-
-- [1.00 UniFi Controller](#100-unifi-controller)
+[] [1.00 UniFi Controller](#100-unifi-controller)
 - [2.00 UniFi Settings - Site](#200-unifi-settings---site)
 - [3.00 UniFi Settings - Wireless Networks](#300-unifi-settings---wireless-networks)
 - [2.0 UniFi Networks](#20-unifi-networks)
