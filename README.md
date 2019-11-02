@@ -58,7 +58,7 @@ Here we set you basic UniFi site (i.e home, location of site etc) preferences.  
 | **Device Authentication**
 | SSH Authentication | `☑` Enable SSH authentication
 | | Username `admin`
-| | Password `Random character password ONLY i.e cA(8&KxjLHz8s4?A`
+| | Password | `Type Passward` | *Random character password ONLY i.e cA(8&KxjLHz8s4?A). And note it down as its vital for recovery of AP's.*
 | SSH Keys | No SSH keys have been defined.
 
 And click `Apply Changes`.
@@ -176,7 +176,7 @@ Coming soon.
 Coming soon.
 
 ## 5.00 UniFi DPI
-Coming soon.
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_dpi.png)
 
 ## 6.00 UniFi Guest Control
 Coming soon.
