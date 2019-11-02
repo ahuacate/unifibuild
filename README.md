@@ -108,12 +108,12 @@ And click `Save`.
 
 Now repeat the procedure, using the above values except where shown (i.e Guest passphrase, Name/SSID, Guest Policy), creating new wireless networks on the following VLAN's:
 
-| Create New Wireless Network | VLAN10 | VLAN20 | VLAN30 | VLAN40 | VLAN70 | VLAN120 |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| Name/SSID | `name-open` | `name-smart` | `name-vpngate-world` | `name-vpngate-local` | `name-guest` | `name-iot` |
-| Security Key | Common Passphrase | Common Passphrase |  Common Passphrase |  Common Passphrase |  **Guest Passphrase** |  Common Passphrase | 
-| Guest Policy | `☐` | `☐` | `☐` | `☐` | `☑` | `☐` |
-| VLAN | `☑` Use VLAN `10` | `☑` Use VLAN `20` | `☑` Use VLAN `30` | `☑` Use VLAN `40` | `☑` Use VLAN `70` | `☑` Use VLAN `120` |
+| Create New Wireless Network | VLAN10 | VLAN20 | VLAN30 | VLAN40 | VLAN70 | VLAN110 | VLAN120 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Name/SSID | `name-open` | `name-smart` | `name-vpngate-world` | `name-vpngate-local` | `name-guest` | `name-iot` | `name-not` |
+| Security Key | Common Passphrase | Common Passphrase |  Common Passphrase |  Common Passphrase |  **Guest Passphrase** |  IoT Passphrase |  IoT Passphrase |
+| Guest Policy | `☐` | `☐` | `☐` | `☐` | `☑` | `☐` | `☐` |
+| VLAN | `☑` Use VLAN `10` | `☑` Use VLAN `20` | `☑` Use VLAN `30` | `☑` Use VLAN `40` | `☑` Use VLAN `70` | `☑` Use VLAN `110` | `☑` Use VLAN `110` |
 
 Your finished configuration must resemble the image below:
 
