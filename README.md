@@ -24,24 +24,23 @@ Other Prerequisites are:
 - [x] Installation of UniFi Controller on your PC or notebook (later to be moved to a Proxmox UniFi LXC)
 
 Tasks to be performed are:
-- [ ] 1.0 Proxmox Base OS Installation
-[] [1.00 UniFi Controller](#100-unifi-controller)
+- [1.00 UniFi Controller](#100-unifi-controller)
 - [2.00 UniFi Settings - Site](#200-unifi-settings---site)
 - [3.00 UniFi Settings - Wireless Networks](#300-unifi-settings---wireless-networks)
 - [2.0 UniFi Networks](#20-unifi-networks)
-  * [2.1 Edit Default LAN network](#21-edit-default-lan-network)
-  * [2.2 Create UniFi Networks](#22-create-unifi-networks)
-- [3.00 UniFi Routing & Firewall](#300-unifi-routing---firewall)
+	- [2.1 Edit Default LAN network](#21-edit-default-lan-network)
+	- [2.2 Create UniFi Networks](#22-create-unifi-networks)
+- [3.00 UniFi Routing & Firewall](#300-unifi-routing--firewall)
 - [4.00 UniFi IPS](#400-unifi-ips)
 - [5.00 UniFi DPI](#500-unifi-dpi)
 - [6.00 UniFi Guest Control](#600-unifi-guest-control)
 - [7.00 UniFi Profiles](#700-unifi-profiles)
 - [8.00 UniFi Services](#800-unifi-services)
-  * [8.01 UniFi Services - DHCP](#801-unifi-services---dhcp)
-  * [8.02 UniFi Services - MDNS](#802-unifi-services---mdns)
-  * [8.03 UniFi Services - UPNP](#803-unifi-services---upnp)
-  * [8.03 UniFi Services - NTP](#803-unifi-services---ntp)
-  * [8.03 UniFi Services - Scheduled Upgrades](#803-unifi-services---scheduled-upgrades)
+	- [8.01 UniFi Services - DHCP](#801-unifi-services---dhcp)
+	- [8.02 UniFi Services - MDNS](#802-unifi-services---mdns)
+	- [8.03 UniFi Services - UPNP](#803-unifi-services---upnp)
+	- [8.03 UniFi Services - NTP](#803-unifi-services---ntp)
+	- [8.03 UniFi Services - Scheduled Upgrades](#803-unifi-services---scheduled-upgrades)
 - [9.00 UniFi Admins](#900-unifi-admins)
 - [10.00 UniFi User Groups](#1000-unifi-user-groups)
 - [11.00 UniFi Controller](#1100-unifi-controller)
@@ -51,7 +50,8 @@ Tasks to be performed are:
 - [14.00 UniFi Elite Device](#1400-unifi-elite-device)
 - [15.00 UniFi Maintenance](#1500-unifi-maintenance)
 - [16.00 UniFi Auto Backup](#1600-unifi-auto-backup)
-- [00.00 Patches & Fixes](#0000-patches---fixes)
+- [00.00 Patches & Fixes](#0000-patches--fixes)
+
 
 ## 1.00 UniFi Controller
 To be completed.
