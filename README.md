@@ -167,12 +167,10 @@ And click `Save`.
 | Name | `VPN-egress` | `LAN-open` | `LAN-smart` | `LAN-vpngate-world` | `LAN-vpngate-local` | `LAN-media` | `LAN-vpnserver` | `LAN-guest` | `LAN-homelab` | `LAN-privatelab` | `LAN-iot` | `LAN-not` 
 | Purpose |`Guest` |`Corporate` | `Corporate` |`VLAN Only`|`VLAN Only`|`Corporate`|`Corporate`|`Guest`|`Corporate`|`Corporate`|`Corporate`|`Corporate`
 | Network Group |`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|`LAN`|
-
-
 | Port |LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1|LAN1
 | VLAN |2|10|20|30|40|50|60|70|80|90|110|120
-| Gateway/Subnet |`192.168.2.5/28`| 
-| Domain Name | Leave blank
+| Gateway/Subnet |`192.168.2.5/28`|`192.168.10.5/24`|`192.168.20.5/24`|||`192.168.50.5/24`|`192.168.60.5/24`|`192.168.70.5/24`|`192.168.80.5/24`|`192.168.90.5/24`|`192.168.110.5/24`|`192.168.120.5/24`|
+| Domain Name |localdomain|localdomain|localdomain|||localdomain|localdomain|localdomain|localdomain|localdomain|localdomain|localdomain|
 | IGMP Snooping |`☑` Enable IGMP Snooping
 | DHCP Mode |`☑` DHCP Server
 | DHCP Range |`192.168.2.1`-`192.168.2.14`
