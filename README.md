@@ -165,7 +165,7 @@ Create the following new networks. Go to your UniFi controller `Settings` > `Net
 
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_network_configuration.png)
 
-On completion of the above task your UniFi `Netowrks` WebGUI should resemble:
+On completion of the above task your your UniFi controller `Settings` > `Networks`  should resemble:
 
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_networks.png)
 
@@ -202,3 +202,37 @@ Go to your UniFi controller `Settings` > `Services` and set the values as follow
 
 ### 8.03 UniFi Services - Scheduled Upgrades
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_upgrades.png)
+
+## 9.00 UniFi Admins
+Coming soon.
+
+## 10.00 UniFi User Groups
+Coming soon.
+
+## 11.00 UniFi Controller
+Coming soon.
+
+## 12.00 UniFi User Interface
+Coming soon.
+
+## 12.00 UniFi Notifications
+Coming soon.
+
+## 13.00 UniFi Cloud Access
+Coming soon.
+
+## 14.00 UniFi Elite Device
+Coming soon.
+
+## 15.00 UniFi Maintenance
+Coming soon.
+
+## 16.00 UniFi Auto Backup
+Go to your UniFi controller `Settings` > `Auto Maintenance` and set the values as follows, remembering to click `Save` at the end.
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_autobackup.png)
+
+---
+
+## 00.00 Patches & Fixes
+Coming soon.
+
