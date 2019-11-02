@@ -113,11 +113,11 @@ Now repeat the procedure, using the above values except where shown (i.e Guest p
 | Name/SSID | `name-open` | `name-smart` | `name-vpngate-world` | `name-vpngate-local` | `name-guest` | `name-iot` | `name-not` |
 | Security Key | Common Passphrase | Common Passphrase |  Common Passphrase |  Common Passphrase |  **Guest Passphrase** |  IoT Passphrase |  IoT Passphrase |
 | Guest Policy | `☐` | `☐` | `☐` | `☐` | `☑` | `☐` | `☐` |
-| VLAN | `☑` Use VLAN `10` | `☑` Use VLAN `20` | `☑` Use VLAN `30` | `☑` Use VLAN `40` | `☑` Use VLAN `70` | `☑` Use VLAN `110` | `☑` Use VLAN `110` |
+| VLAN | `☑` Use VLAN `10` | `☑` Use VLAN `20` | `☑` Use VLAN `30` | `☑` Use VLAN `40` | `☑` Use VLAN `70` | `☑` Use VLAN `110` | `☑` Use VLAN `120` |
 
 Your finished configuration must resemble the image below:
 
-![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_wireless.png)
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifiwireless.png)
 
 
 ## 2.0 UniFi Networks
