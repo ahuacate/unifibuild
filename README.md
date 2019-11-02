@@ -39,8 +39,8 @@ Tasks to be performed are:
 	- [8.01 UniFi Services - DHCP](#801-unifi-services---dhcp)
 	- [8.02 UniFi Services - MDNS](#802-unifi-services---mdns)
 	- [8.03 UniFi Services - UPNP](#803-unifi-services---upnp)
-	- [8.03 UniFi Services - NTP](#803-unifi-services---ntp)
-	- [8.03 UniFi Services - Scheduled Upgrades](#803-unifi-services---scheduled-upgrades)
+	- [8.04 UniFi Services - NTP](#804-unifi-services---ntp)
+	- [8.05 UniFi Services - Scheduled Upgrades](#805-unifi-services---scheduled-upgrades)
 - [9.00 UniFi Admins](#900-unifi-admins)
 - [10.00 UniFi User Groups](#1000-unifi-user-groups)
 - [11.00 UniFi Controller](#1100-unifi-controller)
@@ -221,10 +221,10 @@ Go to your UniFi controller `Settings` > `Services` and set the values as follow
 ### 8.03 UniFi Services - UPNP
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_upnp.png)
 
-### 8.03 UniFi Services - NTP
+### 8.04 UniFi Services - NTP
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_ntp.png)
 
-### 8.03 UniFi Services - Scheduled Upgrades
+### 8.05 UniFi Services - Scheduled Upgrades
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_upgrades.png)
 
 ## 9.00 UniFi Admins
