@@ -188,6 +188,7 @@ Coming soon.
 Go to your UniFi controller `Settings` > `Services` and set the values as follows, remembering to click `Save` at the end.
 
 ### 8.01 UniFi Services - DHCP
+
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_dhcp.png)
 
 ### 8.02 UniFi Services - MDNS
