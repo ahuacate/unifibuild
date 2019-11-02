@@ -117,7 +117,7 @@ Now repeat the procedure, using the above values except where shown (i.e Guest p
 
 Your finished configuration must resemble the image below:
 
-![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifiwireless.png)
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_wireless.png)
 
 
 ## 2.0 UniFi Networks
