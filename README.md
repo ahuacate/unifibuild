@@ -194,7 +194,36 @@ On completion of the above task your your UniFi controller `Settings` > `Network
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_networks.png)
 
 ## 3.00 UniFi Routing & Firewall
-Coming soon.
+Go to your UniFi controller `Routing & Firewall` and set the values as follows, remembering to click `Save` at the end.
+
+### 3.01 Unifi Static Routes
+Create the following Static Routes:
+
+| Create New Route | Value | Notes
+| :--- | :--- | :---
+| Name | `Allow  access to VLAN30`
+| Enable | `☑` Enable this route
+| Type| `☑` Static
+| Network | `192.168.30.0/24`
+| Distance | `1`
+| Static Route Type | `☑` Next Hop
+| Next Hop | `192.168.2.1`
+
+And click `Save`
+
+| Create New Route | Value | Notes
+| :--- | :--- | :---
+| Name | `Allow  access to VLAN40`
+| Enable | `☑` Enable this route
+| Type| `☑` Static
+| Network | `192.168.40.0/24`
+| Distance | `1`
+| Static Route Type | `☑` Next Hop
+| Next Hop | `192.168.2.1`
+
+And click `Save`
+
+![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_routes_01.png)
 
 ## 4.00 UniFi IPS
 Coming soon.
