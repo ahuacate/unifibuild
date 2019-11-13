@@ -196,8 +196,8 @@ On completion of the above task your your UniFi controller `Settings` > `Network
 ## 3.00 UniFi Routing & Firewall
 Go to your UniFi controller `Routing & Firewall` and set the values as follows, remembering to click `Save` at the end.
 
-### 3.01 Unifi Static Routes
-Create the following Static Routes:
+### 3.01 Unifi Firewall - Static Routes
+Create the following `Static Routes`:
 
 | Create New Route | Value | Notes
 | :--- | :--- | :---
@@ -224,6 +224,34 @@ And click `Save`
 And click `Save`
 
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_routes_01.png)
+
+### 3.02 Unifi Firewall - Groups
+Its important you create all your `Groups` before creating firewall rules. Go to your UniFi controller `Routing & Firewall` > `Firewall` > `Groups` and set the values as follows, remembering to click `Save` at the end.
+
+#### 3.021 All Chromecast addresses
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `All Chromecast addresses`
+| Type | `☑` Address IPv4
+| Address | `192.168.20.0/24`
+|| `192.168.40.0/24`
+
+And click `Save`
+
+
+#### 3.021 All IP Addresses
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `All IP Addresses`
+| Type | `☑` Address IPv4
+| Address | `0.0.0.0/1`
+|| `128.0.0.0/2`
+|| `192.0.0.0/3`
+|| `224.0.0.0/4`
+
+And click `Save`
 
 ## 4.00 UniFi IPS
 Coming soon.
