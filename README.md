@@ -193,11 +193,10 @@ On completion of the above task your your UniFi controller `Settings` > `Network
 
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_networks.png)
 
-## 3.00 UniFi Routing & Firewall
+## 3.00 UniFi Routing & Firewall - Static Routes
 Go to your UniFi controller `Routing & Firewall` and set the values as follows, remembering to click `Save` at the end.
 
-### 3.01 Unifi Firewall - Static Routes
-Create the following `Static Routes`:
+### 3.01 Unifi Static Routes - Allow  access to VLAN30
 
 | Create New Route | Value | Notes
 | :--- | :--- | :---
@@ -210,6 +209,8 @@ Create the following `Static Routes`:
 | Next Hop | `192.168.2.1`
 
 And click `Save`
+
+### 3.02 Unifi Static Routes - Allow  access to VLAN40
 
 | Create New Route | Value | Notes
 | :--- | :--- | :---
@@ -225,31 +226,180 @@ And click `Save`
 
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_routes_01.png)
 
-### 3.02 Unifi Firewall - Groups
+## 4.00 UniFi Routing & Firewall  - Groups
 Its important you create all your `Groups` before creating firewall rules. Go to your UniFi controller `Routing & Firewall` > `Firewall` > `Groups` and set the values as follows, remembering to click `Save` at the end.
 
-#### 3.021 All Chromecast addresses
+### 4.01 Unifi Firewall Groups - All Chromecast Client IP addresses
+Here you state your networks requiring Chromecast Access.
 
 | Create New Group | Value | Notes
 | :--- | :--- | :---
 | Name | `All Chromecast addresses`
 | Type | `☑` Address IPv4
-| Address | `192.168.20.0/24`
-|| `192.168.40.0/24`
+| Address | `192.168.20.0/24` | *site-smart network - network with smart DNS*
+|| `192.168.40.0/24` | *site-vpngate-local network*
 
 And click `Save`
 
-
-#### 3.021 All IP Addresses
+### 4.02 Unifi Firewall Groups - All IP Addresses
 
 | Create New Group | Value | Notes
 | :--- | :--- | :---
-| Name | `All IP Addresses`
+| Name | `All IP addresses`
 | Type | `☑` Address IPv4
 | Address | `0.0.0.0/1`
 || `128.0.0.0/2`
 || `192.0.0.0/3`
 || `224.0.0.0/4`
+
+And click `Save`
+
+### 4.03 Unifi Firewall Groups - All local addresses
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `All local addresses`
+| Type | `☑` Address IPv4
+| Address | `192.168.1.0/24`
+|| `192.168.10.0/24`
+|| `192.168.20.0/24`
+|| `192.168.30.0/24`
+|| `192.168.40.0/24`
+|| `192.168.50.0/24`
+|| `192.168.60.0/24`
+||| *192.168.70.0/24 is excluded because its a Guest network*
+|| `192.168.80.0/24`
+|| `192.168.90.0/24`
+|| `192.168.110.0/24`
+|| `192.168.120.0/24`
+
+And click `Save`
+
+### 4.04 Unifi Firewall Groups - All vpngate-local addresses
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `All vpngate-local addresses`
+| Type | `☑` Address IPv4
+| Address | `192.168.40.0/24`
+
+And click `Save`
+
+### 4.05 Unifi Firewall Groups - CCTV devices
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `CCTV devices`
+| Type | `☑` Address IPv4
+| Address | `192.168.120.0/24`
+
+And click `Save`
+
+
+### 4.06 Unifi Firewall Groups - CCTV ports
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `CCTV ports`
+| Type | `☑` Port
+| Port | `tba`
+
+And click `Save`
+
+### 4.07 Unifi Firewall Groups - Chromecast devices
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `Chromecast devices`
+| Type | `☑` Address IPv4
+| Address | `192.168.20.151`
+
+And click `Save`
+
+### 4.08 Unifi Firewall Groups - Chromecast ports
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `Chromecast ports`
+| Type | `☑` Port
+| Port | `1900`
+|| `5353`
+|| `8008`
+|| `8009`
+|| `8443`
+
+And click `Save`
+
+### 4.09 Unifi Firewall Groups - Google DNS
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `Google DNS`
+| Type | `☑` Address IPv4
+| Address | `8.8.8.8`
+|| `8.8.4.4`
+
+And click `Save`
+
+### 4.10 Unifi Firewall Groups - Home Assistant Server
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `Home Assistant Server`
+| Type | `☑` Address IPv4
+| Address | `192.168.90.131`
+
+And click `Save`
+
+### 4.11 Unifi Firewall Groups - MQTT ports
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `MQTT ports`
+| Type | `☑` Port
+| Port | `1883`
+|| `8883`
+
+And click `Save`
+
+### 4.12 Unifi Firewall Groups - NTP Ports
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `NTP ports`
+| Type | `☑` Port
+| Port | `123`
+
+And click `Save`
+
+### 4.13 Unifi Firewall Groups - Printing devices
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `Printing devices`
+| Type | `☑` Address IPv4
+| Address | `192.168.1.91`
+
+And click `Save`
+
+### 4.14 Unifi Firewall Groups - Printing Ports
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `Printing ports`
+| Type | `☑` Port
+| Port | `137` | *Here add all the required ports for each type of printers*
+|| `631`
+
+And click `Save`
+
+### 4.15 Unifi Firewall Groups - vpngate networks
+
+| Create New Group | Value | Notes
+| :--- | :--- | :---
+| Name | `vpngate networks`
+| Type | `☑` Address IPv4
+| Address | `192.168.40.0/24` | *site-vpngate-local network*
 
 And click `Save`
 
