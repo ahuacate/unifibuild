@@ -286,6 +286,7 @@ And click `Save`
 And click `Save`
 
 ### 4.05 Unifi Firewall Groups - CCTV devices
+Here you state all your CCTV camera IP addresses.
 
 | Create New Group | Value | Notes
 | :--- | :--- | :---
@@ -297,6 +298,7 @@ And click `Save`
 
 
 ### 4.06 Unifi Firewall Groups - CCTV ports
+Here you state all your CCTV camera ports.
 
 | Create New Group | Value | Notes
 | :--- | :--- | :---
@@ -307,6 +309,7 @@ And click `Save`
 And click `Save`
 
 ### 4.07 Unifi Firewall Groups - Chromecast devices
+Here you state all your Chromecast device IP addresses.
 
 | Create New Group | Value | Notes
 | :--- | :--- | :---
@@ -317,6 +320,7 @@ And click `Save`
 And click `Save`
 
 ### 4.08 Unifi Firewall Groups - Chromecast ports
+Here you state all your Chromecast ports.
 
 | Create New Group | Value | Notes
 | :--- | :--- | :---
@@ -331,6 +335,7 @@ And click `Save`
 And click `Save`
 
 ### 4.09 Unifi Firewall Groups - Google DNS
+Here you state Google DNS IP addresses. This is blocked on VLAN20.
 
 | Create New Group | Value | Notes
 | :--- | :--- | :---
@@ -393,15 +398,6 @@ And click `Save`
 
 And click `Save`
 
-### 4.15 Unifi Firewall Groups - vpngate networks
-
-| Create New Group | Value | Notes
-| :--- | :--- | :---
-| Name | `vpngate networks`
-| Type | `☑` Address IPv4
-| Address | `192.168.40.0/24` | *site-vpngate-local network*
-
-And click `Save`
 
 ## 4.00 UniFi IPS
 Coming soon.
