@@ -309,7 +309,7 @@ Here you state all your CCTV camera ports.
 And click `Save`
 
 ### 4.07 Unifi Firewall Groups - Chromecast devices
-Here you state all your Chromecast device IP addresses.
+Here you state all your Chromecast device IP addresses including TV's.
 
 | Create New Group | Value | Notes
 | :--- | :--- | :---
@@ -378,6 +378,7 @@ And click `Save`
 And click `Save`
 
 ### 4.13 Unifi Firewall Groups - Printing devices
+Here you state your network printers IP address. You must assign a static IPv4 address either at the printer hardware or at the UniFi controller.
 
 | Create New Group | Value | Notes
 | :--- | :--- | :---
@@ -388,13 +389,14 @@ And click `Save`
 And click `Save`
 
 ### 4.14 Unifi Firewall Groups - Printing Ports
+Here you state your printer models ports used for network printing. Best Google your printer model and add the ports specified. 
 
 | Create New Group | Value | Notes
 | :--- | :--- | :---
 | Name | `Printing ports`
 | Type | `☑` Port
-| Port | `137` | *Here add all the required ports for each type of printers*
-|| `631`
+| Port | `137` | *Brother Laser Printer port*
+|| `631` | *Brother Laser Printer port*
 
 And click `Save`
 
