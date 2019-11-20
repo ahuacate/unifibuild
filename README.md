@@ -400,14 +400,23 @@ Here you state your printer models ports used for network printing. Best Google 
 
 And click `Save`
 
-## 5.00 UniFi Routing & Firewall  - LAN IN
+## 5.00 UniFi Routing & Firewall  - WAN IN
+Nothing to do here.
+
+## 6.00 UniFi Routing & Firewall  - WAN OUT
+Nothing to do here.
+
+## 7.00 UniFi Routing & Firewall  - WAN LOCAL
+Nothing to do here.
+
+## 8.00 UniFi Routing & Firewall  - LAN IN
 Here we create most of our firewall rules under tha `LAN IN` Tab. Go to your UniFi controller `Routing & Firewall` > `Firewall` > `Rules IPv4` > `LAN IN` and set the values as follows, remembering to click `Save` at the end.
 
-### 5.01 Unifi Firewall LAN IN - Allow All Established and Related Sessions
+### 8.01 Unifi Firewall LAN IN - Allow All Established and Related Sessions
 
 | Create New Rule | Value | Notes
 | :--- | :--- | :---
-| Name | `Printing ports`
+| Name | `Allow All Established and Related Sessions`
 | Enabled | `☑` On
 | Rule Applied | `☑` Before predefined rules `☐` After predefined rules
 | Action | `☐` Drop `☐` Reject `☑` Accept
@@ -439,66 +448,453 @@ Here we create most of our firewall rules under tha `LAN IN` Tab. Go to your Uni
 
 And click `Save`.
 
+### 8.02 Unifi Firewall LAN IN - Accept all NTP Requests
 
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `Accept all NTP Requests`
+| Enabled | `☑` On
+| Rule Applied | `☑` Before predefined rules `☐` After predefined rules
+| Action | `☐` Drop `☐` Reject `☑` Accept
+| IPv4 Protocol | `☑` All
+|| `☐` TCP
+|| `☐` UDP
+|| `☐` TCP and UDP
+|| `☐` ICMP
+|| `☐` Choose a protocol by name
+|| `☐` Enter a protocol number
+| **Advanced**
+| Logging | `☐` Enable logging
+| States | `☐` New
+|| `☐` Established
+|| `☐` Invalid
+|| `☐` Related
+| IPsec | `☑` Don't match on IPsec packets
+|| `☐` Match inbound IPsec packets
+|| `☐` Match inbound non-IPsec packets
+| **Source**
+| Source Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `All local addresses`
+| Port Group | `Any`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `Any`
+| Port Group | `NTP Ports`
 
+And click `Save`.
 
+### 8.03 Unifi Firewall LAN IN - Allow NoT to MQTT
 
-## 4.00 UniFi IPS
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `Allow NoT to MQTT`
+| Enabled | `☑` On
+| Rule Applied | `☑` Before predefined rules `☐` After predefined rules
+| Action | `☐` Drop `☐` Reject `☑` Accept
+| IPv4 Protocol | `☑` All
+|| `☐` TCP
+|| `☐` UDP
+|| `☐` TCP and UDP
+|| `☐` ICMP
+|| `☐` Choose a protocol by name
+|| `☐` Enter a protocol number
+| **Advanced**
+| Logging | `☐` Enable logging
+| States | `☐` New
+|| `☐` Established
+|| `☐` Invalid
+|| `☐` Related
+| IPsec | `☑` Don't match on IPsec packets
+|| `☐` Match inbound IPsec packets
+|| `☐` Match inbound non-IPsec packets
+| **Source**
+| Source Type | `☐` Address/Port Group `☑` Network `☐` IP address
+| Network | `LAN-NoT`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `Home Assistant Server`
+| Port Group | `MQTT ports`
+
+And click `Save`.
+
+### 8.04 Unifi Firewall LAN IN - Allow IoT to Home Assistant
+
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `Allow IoT to Home Assistant`
+| Enabled | `☑` On
+| Rule Applied | `☑` Before predefined rules `☐` After predefined rules
+| Action | `☐` Drop `☐` Reject `☑` Accept
+| IPv4 Protocol | `☑` All
+|| `☐` TCP
+|| `☐` UDP
+|| `☐` TCP and UDP
+|| `☐` ICMP
+|| `☐` Choose a protocol by name
+|| `☐` Enter a protocol number
+| **Advanced**
+| Logging | `☐` Enable logging
+| States | `☐` New
+|| `☐` Established
+|| `☐` Invalid
+|| `☐` Related
+| IPsec | `☑` Don't match on IPsec packets
+|| `☐` Match inbound IPsec packets
+|| `☐` Match inbound non-IPsec packets
+| **Source**
+| Source Type | `☐` Address/Port Group `☑` Network `☐` IP address
+| Network | `LAN-IoT`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `Home Assistant Server`
+| Port Group | `Any`
+
+And click `Save`.
+
+### 8.05 Unifi Firewall LAN IN - Allow Chromecast Broadcast
+
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `Allow Chromecast Broadcast`
+| Enabled | `☑` On
+| Rule Applied | `☑` Before predefined rules `☐` After predefined rules
+| Action | `☐` Drop `☐` Reject `☑` Accept
+| IPv4 Protocol | `☑` All
+|| `☐` TCP
+|| `☐` UDP
+|| `☐` TCP and UDP
+|| `☐` ICMP
+|| `☐` Choose a protocol by name
+|| `☐` Enter a protocol number
+| **Advanced**
+| Logging | `☐` Enable logging
+| States | `☐` New
+|| `☐` Established
+|| `☐` Invalid
+|| `☐` Related
+| IPsec | `☑` Don't match on IPsec packets
+|| `☐` Match inbound IPsec packets
+|| `☐` Match inbound non-IPsec packets
+| **Source**
+| Source Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `Chromecast devices`
+| Port Group | `Any`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `Any`
+| Port Group | `Chromecast ports`
+
+And click `Save`.
+
+### 8.06 Unifi Firewall LAN IN - Block IoT from LAN
+
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `Block IoT from LAN`
+| Enabled | `☑` On
+| Rule Applied | `☑` Before predefined rules `☐` After predefined rules
+| Action | `☑` Drop `☐` Reject `☐` Accept
+| IPv4 Protocol | `☑` All
+|| `☐` TCP
+|| `☐` UDP
+|| `☐` TCP and UDP
+|| `☐` ICMP
+|| `☐` Choose a protocol by name
+|| `☐` Enter a protocol number
+| **Advanced**
+| Logging | `☐` Enable logging
+| States | `☐` New
+|| `☐` Established
+|| `☐` Invalid
+|| `☐` Related
+| IPsec | `☑` Don't match on IPsec packets
+|| `☐` Match inbound IPsec packets
+|| `☐` Match inbound non-IPsec packets
+| **Source**
+| Source Type | `☐` Address/Port Group `☑` Network `☐` IP address
+| Network | `LAN-IoT`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `☐` Address/Port Group `☑` Network `☐` IP address
+| Network | `LAN`
+| Mac address | Leave blank
+
+And click `Save`.
+
+### 8.07 Unifi Firewall LAN IN - Block IoT from NoT
+
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `Block IoT from NoT`
+| Enabled | `☑` On
+| Rule Applied | `☑` Before predefined rules `☐` After predefined rules
+| Action | `☑` Drop `☐` Reject `☐` Accept
+| IPv4 Protocol | `☑` All
+|| `☐` TCP
+|| `☐` UDP
+|| `☐` TCP and UDP
+|| `☐` ICMP
+|| `☐` Choose a protocol by name
+|| `☐` Enter a protocol number
+| **Advanced**
+| Logging | `☐` Enable logging
+| States | `☐` New
+|| `☐` Established
+|| `☐` Invalid
+|| `☐` Related
+| IPsec | `☑` Don't match on IPsec packets
+|| `☐` Match inbound IPsec packets
+|| `☐` Match inbound non-IPsec packets
+| **Source**
+| Source Type | `☐` Address/Port Group `☑` Network `☐` IP address
+| Network | `LAN-IoT`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `☐` Address/Port Group `☑` Network `☐` IP address
+| Network | `LAN-NoT`
+| Mac address | Leave blank
+
+And click `Save`.
+
+### 8.08 Unifi Firewall LAN IN - Block all NoT
+
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `Block all NoT`
+| Enabled | `☑` On
+| Rule Applied | `☑` Before predefined rules `☐` After predefined rules
+| Action | `☑` Drop `☐` Reject `☐` Accept
+| IPv4 Protocol | `☑` All
+|| `☐` TCP
+|| `☐` UDP
+|| `☐` TCP and UDP
+|| `☐` ICMP
+|| `☐` Choose a protocol by name
+|| `☐` Enter a protocol number
+| **Advanced**
+| Logging | `☐` Enable logging
+| States | `☐` New
+|| `☐` Established
+|| `☐` Invalid
+|| `☐` Related
+| IPsec | `☑` Don't match on IPsec packets
+|| `☐` Match inbound IPsec packets
+|| `☐` Match inbound non-IPsec packets
+| **Source**
+| Source Type | `☐` Address/Port Group `☑` Network `☐` IP address
+| Network | `LAN-NoT`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `All IP addresses`
+| Port Group | `Any`
+
+And click `Save`.
+
+## 9.00 UniFi Routing & Firewall  - LAN OUT
+Nothing to do here.
+
+## 10.00 UniFi Routing & Firewall  - LAN LOCAL
+Nothing to do here.
+
+## 11.00 UniFi Routing & Firewall  - Guest IN
+Here we create most of our firewall rules under tha `LAN IN` Tab. Go to your UniFi controller `Routing & Firewall` > `Firewall` > `Rules IPv4` > `GUEST IN` and set the values as follows, remembering to click `Save` at the end.
+
+### 11.01 Unifi Firewall GUEST IN - Allow Chromecast devices In
+
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `Allow Chromecast devices In`
+| Enabled | `☑` On
+| Rule Applied | `☑` Before predefined rules `☐` After predefined rules
+| Action | `☐` Drop `☐` Reject `☑` Accept
+| IPv4 Protocol | `☑` All
+|| `☐` TCP
+|| `☐` UDP
+|| `☐` TCP and UDP
+|| `☐` ICMP
+|| `☐` Choose a protocol by name
+|| `☐` Enter a protocol number
+| **Advanced**
+| Logging | `☐` Enable logging
+| States | `☐` New
+|| `☑` Established
+|| `☐` Invalid
+|| `☑` Related
+| IPsec | `☑` Don't match on IPsec packets
+|| `☐` Match inbound IPsec packets
+|| `☐` Match inbound non-IPsec packets
+| **Source**
+| Source Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `Chromecast devices`
+| Port Group | `Any`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `All Chromecast Client IP addresses`
+| Port Group | `Chromecast ports`
+
+And click `Save`.
+
+### 11.02 Unifi Firewall GUEST IN - Allow Printer devices In
+
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `Allow Printer devices In`
+| Enabled | `☑` On
+| Rule Applied | `☑` Before predefined rules `☐` After predefined rules
+| Action | `☐` Drop `☐` Reject `☑` Accept
+| IPv4 Protocol | `☑` All
+|| `☐` TCP
+|| `☐` UDP
+|| `☐` TCP and UDP
+|| `☐` ICMP
+|| `☐` Choose a protocol by name
+|| `☐` Enter a protocol number
+| **Advanced**
+| Logging | `☐` Enable logging
+| States | `☑` New
+|| `☑` Established
+|| `☐` Invalid
+|| `☐` Related
+| IPsec | `☑` Don't match on IPsec packets
+|| `☐` Match inbound IPsec packets
+|| `☐` Match inbound non-IPsec packets
+| **Source**
+| Source Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `Printing Devices`
+| Port Group | `Any`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `Any`
+| Port Group | `Printing Ports`
+
+And click `Save`.
+
+## 12.00 UniFi Routing & Firewall  - GUEST OUT
+Nothing to do here.
+
+## 13.00 UniFi Routing & Firewall  - GUEST LOCAL
+Nothing to do here.
+
+## 14.00 UniFi Routing & Firewall  - Port Forwarding
+Here we create our port forwarding rules. Go to your UniFi controller `Routing & Firewall` > `Port Forwarding` and set the values as follows, remembering to click `Save` at the end.
+
+### 14.01 Unifi Port Forwarding - HAProxy
+
+| Create New Port Forward Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `HAProxy`
+| Enabled | `☑` Enable this port forward rule
+| From | `☑` Anywhere `☐` Limited
+| Port | `80`
+| Forward IP | `192.168.2.1`
+| Forward Port | `80`
+| Protocol | `☐` Both `☑` TCP `☐` UDP
+| Logs | `☐` Enable logging
+
+And click `Save`.
+
+### 14.02 Unifi Port Forwarding - HAProxy
+
+| Create New Port Forward Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `HAProxy`
+| Enabled | `☑` Enable this port forward rule
+| From | `☑` Anywhere `☐` Limited
+| Port | `443`
+| Forward IP | `192.168.2.1`
+| Forward Port | `443`
+| Protocol | `☐` Both `☑` TCP `☐` UDP
+| Logs | `☐` Enable logging
+
+And click `Save`.
+
+### 14.03 Unifi Port Forwarding - Syncthing - listening
+
+| Create New Port Forward Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `Syncthing - listening`
+| Enabled | `☑` Enable this port forward rule
+| From | `☑` Anywhere `☐` Limited
+| Port | `22000`
+| Forward IP | `192.168.80.122`
+| Forward Port | `22000`
+| Protocol | `☐` Both `☑` TCP `☐` UDP
+| Logs | `☐` Enable logging
+
+And click `Save`.
+
+## 15.00 UniFi IPS
 Coming soon.
 
-## 5.00 UniFi DPI
+## 16.00 UniFi DPI
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_dpi.png)
 
-## 6.00 UniFi Guest Control
+## 17.00 UniFi Guest Control
+
+| Guest Policies | Value | Notes
+| :--- | :--- | :---
+| Guest Portal | `☐` Enable Guest Portal
+| **Access Control**
+| Pre-Authorization Access | 
+| Post-Authorization Restrictions | `192.168.0.0/16`
+|| `172.16.0.0/12`
+|| `10.0.0.0/8`
+|| `192.168.1.206/32`
+
+## 18.00 UniFi Profiles
 Coming soon.
 
-## 7.00 UniFi Profiles
-Coming soon.
-
-## 8.00 UniFi Services
+## 19.00 UniFi Services
 Go to your UniFi controller `Settings` > `Services` and set the values as follows, remembering to click `Save` at the end.
 
-### 8.01 UniFi Services - DHCP
+### 19.01 UniFi Services - DHCP
 
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_dhcp.png)
 
-### 8.02 UniFi Services - MDNS
+### 19.02 UniFi Services - MDNS
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_mdns.png)
 
-### 8.03 UniFi Services - UPNP
+### 19.03 UniFi Services - UPNP
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_upnp.png)
 
-### 8.04 UniFi Services - NTP
+### 19.04 UniFi Services - NTP
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_ntp.png)
 
-### 8.05 UniFi Services - Scheduled Upgrades
+### 19.05 UniFi Services - Scheduled Upgrades
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_services_upgrades.png)
 
-## 9.00 UniFi Admins
+## 20.00 UniFi Admins
 Coming soon.
 
-## 10.00 UniFi User Groups
+## 21.00 UniFi User Groups
 Coming soon.
 
-## 11.00 UniFi Controller
+## 22.00 UniFi Controller
 Coming soon.
 
-## 12.00 UniFi User Interface
+## 23.00 UniFi User Interface
 Coming soon.
 
-## 12.00 UniFi Notifications
+## 24.00 UniFi Notifications
 Coming soon.
 
-## 13.00 UniFi Cloud Access
+## 25.00 UniFi Cloud Access
 Coming soon.
 
-## 14.00 UniFi Elite Device
+## 26.00 UniFi Elite Device
 Coming soon.
 
-## 15.00 UniFi Maintenance
+## 27.00 UniFi Maintenance
 Coming soon.
 
-## 16.00 UniFi Auto Backup
+## 28.00 UniFi Auto Backup
 Go to your UniFi controller `Settings` > `Auto Maintenance` and set the values as follows, remembering to click `Save` at the end.
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_autobackup.png)
 
