@@ -227,7 +227,7 @@ And click `Save`
 ![alt text](https://raw.githubusercontent.com/ahuacate/unifibuild/master/images/unifi_routes_01.png)
 
 ## 4.00 UniFi Routing & Firewall  - Groups
-Its important you create all your `Groups` before creating firewall rules. Go to your UniFi controller `Routing & Firewall` > `Firewall` > `Groups` and set the values as follows, remembering to click `Save` at the end.
+You should create all your `Groups` before creating firewall rules. Go to your UniFi controller `Routing & Firewall` > `Firewall` > `Groups` and set the values as follows, remembering to click `Save` at the end.
 
 ### 4.01 Unifi Firewall Groups - All Chromecast Client IP addresses
 Here you state your networks requiring Chromecast Access.
@@ -399,6 +399,48 @@ Here you state your printer models ports used for network printing. Best Google 
 || `631` | *Brother Laser Printer port*
 
 And click `Save`
+
+## 5.00 UniFi Routing & Firewall  - LAN IN
+Here we create most of our firewall rules under tha `LAN IN` Tab. Go to your UniFi controller `Routing & Firewall` > `Firewall` > `Rules IPv4` > `LAN IN` and set the values as follows, remembering to click `Save` at the end.
+
+### 5.01 Unifi Firewall LAN IN - Allow All Established and Related Sessions
+
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Name | `Printing ports`
+| Enabled | `☑` On
+| Rule Applied | `☑` Before predefined rules `☐` After predefined rules
+| Action | `☐` Drop `☐` Reject `☑` Accept
+| IPv4 Protocol | `☑` All
+|| `☐` TCP
+|| `☐` UDP
+|| `☐` TCP and UDP
+|| `☐` ICMP
+|| `☐` Choose a protocol by name
+|| `☐` Enter a protocol number
+| **Advanced**
+| Logging | `☐` Enable logging
+| States | `☐` New
+|| `☑` Established
+|| `☐` Invalid
+|| `☑` Related
+| IPsec | `☑` Don't match on IPsec packets
+|| `☐` Match inbound IPsec packets
+|| `☐` Match inbound non-IPsec packets
+| **Source**
+| Source Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `All local addresses`
+| Port Group | `Any`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `☑` Address/Port Group `☐` Network `☐` IP address
+| IPv4 Address Group | `All local addresses`
+| Port Group | `Any`
+
+And click `Save`.
+
+
+
 
 
 ## 4.00 UniFi IPS
