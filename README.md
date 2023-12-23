@@ -74,7 +74,7 @@ It is essential to set your network's Local Domain or Search domain. For residen
 <hr>
 
 # 1. UniFi Controller
-There is Proxmox UniFi-Controller LXC in our Homelab repository.
+A Proxmox UniFi-Controller LXC installer is available in our Homelab repository.
 
 # 2. UniFi System Settings
 Here we set you basic UniFi site (i.e home, location of site etc) preferences.
