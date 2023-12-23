@@ -77,7 +77,7 @@ It is essential to set your network's Local Domain or Search domain. For residen
 A Proxmox UniFi-Controller LXC installer is available in our Homelab repository.
 
 # 2. UniFi System Settings
-Here we set you basic UniFi site (i.e home, location of site etc) preferences.
+Set your basic UniFi site (i.e home, location of site etc) preferences.
 
 1. Navigate to `Settings` > `System` > `General`:
 -- Device Name: Unifi Controller
@@ -96,6 +96,7 @@ Here we set you basic UniFi site (i.e home, location of site etc) preferences.
 -- Network Discovery: Enable
 -- Device Authentication: enable (set username and password)
 
+
 # 3. UniFi Networks
 We use VLANs to separate networks for easier management and to apply security policies.
 
@@ -112,7 +113,6 @@ We use VLANs to separate networks for easier management and to apply security po
 -- DNS Server: 192.168.1.6, 1.1.1.1 (Note 192.168.1.6 is PiHole. If no PiHole use 192.168.1.5)
 -- Lease Time: 86400
 -- Domain Name: local
-
 
 ## 3.2. Create UniFi Networks
 Create the following new networks. Navigate to `Settings` > `Networks` > `New Virtual Network` and set the values as follows, remembering to click `Save` at the end of each new network. There is an OpenOffice calc file 'unifi_network_configuration.ods' in the repository for easy viewing.
