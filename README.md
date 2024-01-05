@@ -16,6 +16,8 @@ The hardware in this recipe uses:
 
 <h2>Prerequisites</h2>
 
+Read about our <a href="https://github.com/ahuacate/common/tree/main/pve/src/local_about_our_build.md" target="_blank">system-wide requirements</a> before proceeding any further.
+
 Network prerequisites are:
 - [x] Layer 2 Network Switches
 - [x] Network Gateway is `192.168.1.5`
