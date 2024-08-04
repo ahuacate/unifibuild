@@ -52,8 +52,10 @@ It is essential to set your network's Local Domain or Search domain. For residen
 - [6. UniFi Routing - Static Routes](#6-unifi-routing---static-routes)
 - [7. UniFi Security](#7-unifi-security)
     - [7.1. General](#71-general)
-    - [7.2. Firewall  - Internet Out](#72-firewall----internet-out)
-        - [7.2.1. Firewall Internet Out - Block DNS list from all local LAN (excluding LAN-smart)](#721-firewall-internet-out---block-dns-list-from-all-local-lan-excluding-lan-smart)
+    - [7.2. Firewall  - Internet](#72-firewall----internet)
+        - [7.2.1. Firewall Internet - Block DNS list from all local LAN (excluding LAN-smart)](#721-firewall-internet---block-dns-list-from-all-local-lan-excluding-lan-smart)
+        - [7.2.2. Firewall Internet - Allow Internet to HAProxy WAN IP/Ports](#722-firewall-internet---allow-internet-to-haproxy-wan-ipports)
+        - [7.2.3. Firewall Internet - Allow Internet to HAProxy WAN IP/Ports](#723-firewall-internet---allow-internet-to-haproxy-wan-ipports)
     - [7.3. Firewall  - LAN IN](#73-firewall----lan-in)
         - [7.3.1. Firewall LAN IN - Allow All Established and Related Sessions](#731-firewall-lan-in---allow-all-established-and-related-sessions)
         - [7.3.2. Firewall LAN IN - Accept all NTP Requests](#732-firewall-lan-in---accept-all-ntp-requests)
@@ -61,9 +63,10 @@ It is essential to set your network's Local Domain or Search domain. For residen
         - [7.3.4. Firewall LAN IN - Allow NoT to MQTT](#734-firewall-lan-in---allow-not-to-mqtt)
         - [7.3.5. Firewall LAN IN - Allow IoT to Home Assistant](#735-firewall-lan-in---allow-iot-to-home-assistant)
         - [7.3.6. Firewall LAN IN - Allow LAN-smart to Media Server](#736-firewall-lan-in---allow-lan-smart-to-media-server)
-        - [7.3.7. Firewall LAN IN - Block IoT from LAN](#737-firewall-lan-in---block-iot-from-lan)
-        - [7.3.8. Firewall LAN IN - Block IoT from NoT](#738-firewall-lan-in---block-iot-from-not)
-        - [7.3.9. Firewall LAN IN - Block all NoT](#739-firewall-lan-in---block-all-not)
+        - [7.3.7. Firewall LAN IN - Allow client networks to medialab hosts](#737-firewall-lan-in---allow-client-networks-to-medialab-hosts)
+        - [7.3.8. Firewall LAN IN - Block IoT from LAN](#738-firewall-lan-in---block-iot-from-lan)
+        - [7.3.9. Firewall LAN IN - Block IoT from NoT](#739-firewall-lan-in---block-iot-from-not)
+        - [7.3.10. Firewall LAN IN - Block all NoT](#7310-firewall-lan-in---block-all-not)
     - [7.4. Firewall  - Guest IN](#74-firewall----guest-in)
         - [7.4.1. Firewall GUEST IN - Allow PiHole DNS in](#741-firewall-guest-in---allow-pihole-dns-in)
     - [7.5. Port Forwarding](#75-port-forwarding)
@@ -172,14 +175,66 @@ Your finished configuration should resemble the image below:
 # 5. UniFi Profiles - IP Groups
 You should create all your Profile `Groups` before creating firewall rules.
 
+
+1. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All Chromecast broadcast IP addresses
+-- Type: IPv4 Address/Subnet
+-- Address: 192.168.20.0/24, 192.168.50.0/24
+3. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All Block DNS addresses
+-- Type: IPv4 Address/Subnet
+-- Address: 8.8.4.4, 8.8.8.8
+1. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All Aircon host IP addresses
+-- Type: IPv4 Address/Subnet
+-- Address: 192.168.110.221
+1. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All Aircon ports
+-- Type: Port Group
+-- Port: 30000,30050,443
 1. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
 -- Profile Name: All DNS ports
 -- Type: Port Group
 -- Port: 53,853
+1. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All HAProxy WAN ingress ports
+-- Type: Port Group
+-- Port: 443,80,8443
+1. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All HAProxy WAN ingress server addresses
+-- Type: IPv4 Address/Subnet
+-- Address: 192.168.2.1
 2. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
 -- Profile Name: All Home App/Nest/Chromecast/Netflix ports
 -- Type: Port Group
 -- Port: 1900,5353,5556,5558,8008,8009
+-- Profile Name: All IP addresses
+-- Type: IPv4 Address/Subnet
+-- Address: 0.0.0.0/1, 128.0.0.0/2, 192.0.0.0/3, 224.0.0.0/4
+5. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All Home host IP addresses
+-- Type: IPv4 Address/Subnet
+-- Address: 192.168.110.0/24, 192.168.80.0/24, 192.168.50.0/24, 192.168.20.0/24, 192.168.10.0/24
+6. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All IP addresses
+-- Type: IPv4 Address/Subnet
+-- Address: 0.0.0.0/1, 128.0.0.0/2, 192.0.0.0/3, 224.0.0.0/4
+5. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All local addresses
+-- Type: IPv4 Address/Subnet
+-- Address: 192.168.1.0/24, 192.168.10.0/24, 192.168.20.0/24, 192.168.50.0/24, 192.168.60.0/24, 192.168.80.0/24
+5. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All local user addresses
+-- Type: IPv4 Address/Subnet
+-- Address: 192.168.1.0/24, 192.168.10.0/24, 192.168.40.0/24
+6. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All not LAN-smart local addresses
+-- Type: IPv4 Address/Subnet
+-- Address: 192.168.1.0/24, 192.168.10.0/24, 192.168.30.0/24, 192.168.40.0/24, 192.168.50.0/24, 192.168.3.0/28
+7. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All PiHole IP addresses
+-- Type: IPv4 Address/Subnet
+-- Address: 192.168.1.6
 3. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
 -- Profile Name: All printer host IP addresses
 -- Type: IPv4 Address/Subnet
@@ -194,30 +249,10 @@ You should create all your Profile `Groups` before creating firewall rules.
 -- Port: 6310 ASCII laser printer
 -- Port: 9100 ASCII laser printer - IBM, Ricoh, HP, Lexmark
 -- Port: 9101 ASCII laser printer - Jetdirect, Marknet server
-5. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
--- Profile Name: All Home host IP addresses
+3. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: All WAN IP addresses
 -- Type: IPv4 Address/Subnet
--- Address: 192.168.110.0/24, 192.168.80.0/24, 192.168.50.0/24, 192.168.20.0/24, 192.168.10.0/24
-6. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
--- Profile Name: All IP addresses
--- Type: IPv4 Address/Subnet
--- Address: 0.0.0.0/1, 128.0.0.0/2, 192.0.0.0/3, 224.0.0.0/4
-5. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
--- Profile Name: All local addresses
--- Type: IPv4 Address/Subnet
--- Address: 192.168.1.0/24, 192.168.10.0/24, 192.168.20.0/24, 192.168.50.0/24, 192.168.60.0/24, 192.168.80.0/24
-6. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
--- Profile Name: All not LAN-smart local addresses
--- Type: IPv4 Address/Subnet
--- Address: 192.168.1.0/24, 192.168.10.0/24, 192.168.30.0/24, 192.168.40.0/24, 192.168.50.0/24, 192.168.3.0/28
-7. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
--- Profile Name: All PiHole IP addresses
--- Type: IPv4 Address/Subnet
--- Address: 192.168.1.6
-8. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
--- Profile Name: Block DNS IP addresses
--- Type: IPv4 Address/Subnet
--- Address: 8.8.4.4, 8.8.8.8
+-- Address: 192.168.1.4
 9. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
 -- Profile Name: CCTV host IP addresses
 -- Type: IPv4 Address/Subnet
@@ -226,6 +261,10 @@ You should create all your Profile `Groups` before creating firewall rules.
 -- Profile Name: CCTV ports
 -- Type: Port Group
 -- Port:
+9. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: Google DNS IP addresses
+-- Type: IPv4 Address/Subnet
+-- Address: 8.8.8.8, 8.8.4.4
 11. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
 -- Profile Name: Home Assistant host IP addresses
 -- Type: IPv4 Address/Subnet
@@ -250,10 +289,15 @@ You should create all your Profile `Groups` before creating firewall rules.
 -- Profile Name: MQTT ports
 -- Type: Port Group
 -- Port: 1883,8883
+16. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
+-- Profile Name: NTP ports
+-- Type: Port Group
+-- Port: 123
 17. Navigate to `Settings` > `Profiles` > `IP Groups` > `+Create New`
 -- Profile Name: SSDP ports
 -- Type: Port Group
 -- Port: 1900
+
 
 # 6. UniFi Routing - Static Routes
 Set the values as follows, remembering to click `Save` at the end.
@@ -283,10 +327,10 @@ Here we create our Firewall rules, Port Forwarding and general security. Set the
 -- Filtering Action: No Action
 
 
-## 7.2. Firewall  - Internet Out
+## 7.2. Firewall  - Internet
 Here we create most of our firewall rules under the `Internet` Tab. Navigate to `Settings` > `Security` > `Firewall Rules` > `Internet` and create the entries as follows, remembering to click `Save` at the end.
 
-### 7.2.1. Firewall Internet Out - Block DNS list from all local LAN (excluding LAN-smart)
+### 7.2.1. Firewall Internet - Block DNS list from all local LAN (excluding LAN-smart)
 | Create New Rule | Value | Notes
 | :--- | :--- | :---
 | Type | `Internet Out`
@@ -301,6 +345,46 @@ Here we create most of our firewall rules under the `Internet` Tab. Navigate to 
 | **Destination**
 | Destination Type | `Port/IP Group`
 | Address Group | `Block DNS IP addresses`
+| Port Group | `Any`
+| **Advanced**
+| Auto
+
+### 7.2.2. Firewall Internet - Allow Internet to HAProxy WAN IP/Ports
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Type | `Internet Local`
+| Name | `Allow Internet to HAProxy WAN IP/Ports`
+| Action | `☑` Accept `☐` Reject `☐` Drop
+| Protocol | `☑` All `☑` Before predefined rules 
+| **Source**
+| Source Type | `Port/IP Group`
+| Address Group | `Any`
+| Port Group | `All HAProxy WAN ingress ports`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `Port/IP Group`
+| Address Group | `All HAProxy WAN ingress server addresses`
+| Port Group | `All HAProxy WAN ingress ports`
+| **Advanced**
+| Auto
+
+### 7.2.3. Firewall Internet - Allow Internet to HAProxy WAN IP/Ports
+Used only for testing. Pause/disable when not required.
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Type | `Internet Local`
+| Name | `(Test Only) Allow ICMPv4 Echo Request from WAN to Internet`
+| Action | `☑` Accept `☐` Reject `☐` Drop
+| Protocol | `ICMP` `☑` Before predefined rules
+| IPv4 ICMP Type Name | `Echo Request`
+| **Source**
+| Source Type | `Port/IP Group`
+| Address Group | `Any`
+| Port Group | `Any`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `Port/IP Group`
+| Address Group | `Any`
 | Port Group | `Any`
 | **Advanced**
 | Auto
@@ -431,7 +515,29 @@ Here we create most of our firewall rules under the `LAN` Tab. Navigate to `Sett
 | **Advanced**
 | Auto
 
-### 7.3.7. Firewall LAN IN - Block IoT from LAN
+### 7.3.7. Firewall LAN IN - Allow client networks to medialab hosts
+
+| Create New Rule | Value | Notes
+| :--- | :--- | :---
+| Type | `LAN In`
+| Name | `Allow client networks to medialab hosts`
+| Action | `☑` Accept `☐` Reject `☐` Drop
+| Protocol | `☑` All `☑` Before predefined rules 
+| **Source**
+| Source Type | `Port/IP Group`
+| Address Group | `All local user addresses`
+| Port Group | `Any`
+| Mac address | Leave blank
+| **Destination**
+| Destination Type | `Network`
+| Network | `LAN-medialab`
+| Network Type | `IPv4 Subnet`
+| **Advanced**
+| Manual
+| Match State | `☑` New
+| Match IPsec | `☑` Do not match
+
+### 7.3.8. Firewall LAN IN - Block IoT from LAN
 
 | Create New Rule | Value | Notes
 | :--- | :--- | :---
@@ -451,7 +557,7 @@ Here we create most of our firewall rules under the `LAN` Tab. Navigate to `Sett
 | **Advanced**
 | Auto
 
-### 7.3.8. Firewall LAN IN - Block IoT from NoT
+### 7.3.9. Firewall LAN IN - Block IoT from NoT
 
 | Create New Rule | Value | Notes
 | :--- | :--- | :---
@@ -471,7 +577,7 @@ Here we create most of our firewall rules under the `LAN` Tab. Navigate to `Sett
 | **Advanced**
 | Auto
 
-### 7.3.9. Firewall LAN IN - Block all NoT
+### 7.3.10. Firewall LAN IN - Block all NoT
 
 | Create New Rule | Value | Notes
 | :--- | :--- | :---
@@ -556,6 +662,7 @@ Here we create our port forwarding rules. Navigate to `Settings` > `Security` > 
 | Forward Port | `8443`
 | Protocol | `TCP`
 | Logs | `☐` Enable
+
 
 ---
 
